@@ -1,0 +1,11 @@
+# Newest scrcpy version = 1.17 (2021.04.18)
+
+sudo apt install git wget meson libavformat-dev libsdl2-dev adb
+
+git clone https://github.com/Genymobile/scrcpy.git
+cd scrcpy
+wget https://github.com/Genymobile/scrcpy/releases/download/v1.17/scrcpy-server-v1.17
+
+meson x --buildtype release --strip -Db_lto=true -Dprebuilt_server=scrcpy-server-v1.17
+ninja -Cx
+sudo ninja -Cx install
