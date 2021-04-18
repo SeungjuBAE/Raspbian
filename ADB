@@ -1,0 +1,13 @@
+# Send Call
+adb -s [Devices name] shell am start -a android.intent.action.CALL -d tel:010-0000-0000
+
+# Receieve Call
+adb -s [Devices name] shell input keyevent 5
+
+# End Call
+adb -s [Devices name] shell input keyevent KEYCODE_ENDCALL
+
+# Airplane Mode On (By Galaxy Note 20 Standards) 
+adb -s [Devices name] shell am start -a android.settings.AIRPLANE_MODE_SETTINGS
+adb -s [Devices name] shell input keyevent 20
+adb -s [Devices name] shell input keyevent 23
